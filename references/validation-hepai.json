@@ -1,0 +1,31 @@
+{
+  "template_version": "1.0.0",
+  "end_to_end_build_and_preview": "pass",
+  "bundled_font_frames_identical_to_reference": true,
+  "fixed_mix_identical": true,
+  "all_preview_text_bounds_and_overlap": "pass",
+  "glyph_mask_aligned": true,
+  "deterministic_seek": "pass",
+  "final_video": {
+    "duration": "93.000000",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "frames": "2790",
+    "audio": [
+      "aac",
+      "48000",
+      2
+    ],
+    "cover_rms": 0.0,
+    "freeze_delta": [
+      3.166795267489712e-05,
+      0.0005322466563786008
+    ],
+    "impact_frame": 1005,
+    "impact_gain_db": 28.667371191192967,
+    "tail_rms_last_100ms": 9.466566552873701e-06,
+    "bytes": 78169948,
+    "sha256": "40ff2dfecfe3df40891c4bdbf4dbb2696b0d5d1b76b4cde3aa17596968a358d9"
+  }
+}
