@@ -117,11 +117,6 @@
     "source": "Annual Review of Sociology",
     "doi": "10.1146/annurev.soc.27.1.415"
   },
-  "cluster_labels": [
-    "阅读",
-    "音乐",
-    "远行"
-  ],
   "sources": [
     {
       "title": "Birds of a Feather: Homophily in Social Networks",
@@ -135,5 +130,281 @@
       "supports": "相似性与社会网络中的连接有关；不支持命定相遇概率或保证相互理解。"
     }
   ],
-  "quotes": []
+  "quotes": [],
+  "scene_module": "hepai-scenes.js",
+  "scenes": [
+    {
+      "id": "vortex",
+      "start": 0,
+      "end": 3,
+      "morph": 1.05,
+      "visual": "粒子人海的漩涡，两颗冷暖光点分开行进",
+      "action": "粒子人海的漩涡，两颗冷暖光点分开行进",
+      "meaning": "你已经遇见许多人，为什么还孤单？",
+      "kind": "particles"
+    },
+    {
+      "id": "vortex",
+      "start": 3,
+      "end": 6,
+      "morph": 1.05,
+      "visual": "人海保持流动，关系未形成",
+      "action": "人海保持流动，关系未形成",
+      "meaning": "名字越存越多，心事却无处可放",
+      "kind": "particles"
+    },
+    {
+      "id": "message",
+      "start": 6,
+      "end": 9,
+      "morph": 1.05,
+      "visual": "消息轨迹逐步伸出后撤回",
+      "action": "消息轨迹逐步伸出后撤回",
+      "meaning": "有些话，打完又删",
+      "kind": "particles"
+    },
+    {
+      "id": "duality",
+      "start": 9,
+      "end": 12,
+      "morph": 1.05,
+      "visual": "两个分离的粒子环，距离可见",
+      "action": "两个分离的粒子环，距离可见",
+      "meaning": "坐得很近，也可能相隔很远",
+      "kind": "particles"
+    },
+    {
+      "id": "tide",
+      "start": 12,
+      "end": 15,
+      "morph": 1.05,
+      "visual": "密集粒子化为潮汐波面",
+      "action": "密集粒子化为潮汐波面",
+      "meaning": "连潮水，也有各自的时刻",
+      "kind": "particles"
+    },
+    {
+      "id": "flock",
+      "start": 15,
+      "end": 18,
+      "morph": 1.05,
+      "visual": "两束粒子向不同方向流动",
+      "action": "两束粒子向不同方向流动",
+      "meaning": "同一片天空，各有各的去向",
+      "kind": "particles"
+    },
+    {
+      "id": "city",
+      "start": 18,
+      "end": 21,
+      "morph": 1.05,
+      "visual": "透视路径网，光点在不同道路前进",
+      "action": "透视路径网，光点在不同道路前进",
+      "meaning": "同一座城，日子却很少交叠",
+      "kind": "particles"
+    },
+    {
+      "id": "helix",
+      "start": 21,
+      "end": 24,
+      "morph": 1.05,
+      "visual": "粒子变成冷暖双螺旋，在空间交错",
+      "action": "粒子变成冷暖双螺旋，在空间交错",
+      "meaning": "擦肩很多，相遇很少",
+      "kind": "particles"
+    },
+    {
+      "id": "gap",
+      "start": 24,
+      "end": 27,
+      "morph": 1.05,
+      "visual": "两束流光靠近，但留有缺口",
+      "action": "两束流光靠近，但留有缺口",
+      "meaning": "所以，人多不等于有人懂你",
+      "kind": "particles"
+    },
+    {
+      "id": "orbit",
+      "start": 27,
+      "end": 30.5,
+      "morph": 1.05,
+      "visual": "双光点沿同一光环接近，蓄力收暗",
+      "action": "双光点沿同一光环接近，蓄力收暗",
+      "meaning": "合拍的人，究竟藏在哪里？",
+      "kind": "particles"
+    },
+    {
+      "id": "title",
+      "start": 30.5,
+      "end": 34,
+      "morph": 0.65,
+      "visual": "锚词当帧落下，冲击环扩散，粒子聚字",
+      "action": "锚词当帧落下，冲击环扩散，粒子聚字",
+      "meaning": "相似，让我们更容易靠近",
+      "kind": "anchor"
+    },
+    {
+      "id": "research",
+      "start": 34,
+      "end": 38,
+      "morph": 1.05,
+      "visual": "左侧事实与来源，右侧网络逐步连线",
+      "action": "左侧事实与来源，右侧网络逐步连线",
+      "meaning": "研究发现，相似的人更常相连",
+      "kind": "particles"
+    },
+    {
+      "id": "interests",
+      "start": 38,
+      "end": 42,
+      "morph": 1.05,
+      "visual": "三个联系群组与主题标签",
+      "action": "三个联系群组与主题标签",
+      "meaning": "兴趣，让我们走向相近的地方",
+      "kind": "particles"
+    },
+    {
+      "id": "city",
+      "start": 42,
+      "end": 46,
+      "morph": 1.05,
+      "visual": "回到透视路径网，表现生活范围",
+      "action": "回到透视路径网，表现生活范围",
+      "meaning": "生活，也悄悄圈定相遇的范围",
+      "kind": "particles"
+    },
+    {
+      "id": "selection",
+      "start": 46,
+      "end": 50,
+      "morph": 1.05,
+      "visual": "外围人群减弱，近处范围显现",
+      "action": "外围人群减弱，近处范围显现",
+      "meaning": "你遇见的，从来不是整个人海",
+      "kind": "particles"
+    },
+    {
+      "id": "branches",
+      "start": 50,
+      "end": 54,
+      "morph": 1.05,
+      "visual": "粒子轨迹分岔，呈现尚未到达的方向",
+      "action": "粒子轨迹分岔，呈现尚未到达的方向",
+      "meaning": "暂时没遇见，不等于你有问题",
+      "kind": "particles"
+    },
+    {
+      "id": "book",
+      "start": 54,
+      "end": 58,
+      "morph": 1.05,
+      "visual": "粒子逐步排成打开的书页",
+      "action": "粒子逐步排成打开的书页",
+      "meaning": "去你真正在意的地方",
+      "kind": "particles"
+    },
+    {
+      "id": "meeting",
+      "start": 58,
+      "end": 62,
+      "morph": 1.05,
+      "visual": "两个光点进入交叠的轨道",
+      "action": "两个光点进入交叠的轨道",
+      "meaning": "让一次相遇，有机会成为日常",
+      "kind": "particles"
+    },
+    {
+      "id": "send",
+      "start": 62,
+      "end": 66,
+      "morph": 1.05,
+      "visual": "铜橙轨迹发出，冰蓝光点停留等待",
+      "action": "铜橙轨迹发出，冰蓝光点停留等待",
+      "meaning": "然后，试着多说一句真心话",
+      "kind": "particles"
+    },
+    {
+      "id": "reply",
+      "start": 66,
+      "end": 70,
+      "morph": 1.05,
+      "visual": "冰蓝轨迹从另一端返回",
+      "action": "冰蓝轨迹从另一端返回",
+      "meaning": "相似，可以是开始",
+      "kind": "particles"
+    },
+    {
+      "id": "different",
+      "start": 70,
+      "end": 74,
+      "morph": 1.05,
+      "visual": "两种不同节奏继续存在",
+      "action": "两种不同节奏继续存在",
+      "meaning": "不同，也值得被听见",
+      "kind": "particles"
+    },
+    {
+      "id": "listen",
+      "start": 74,
+      "end": 78,
+      "morph": 1.05,
+      "visual": "回应向发出者到达",
+      "action": "回应向发出者到达",
+      "meaning": "懂得，常从愿意听开始",
+      "kind": "particles"
+    },
+    {
+      "id": "parallel",
+      "start": 78,
+      "end": 82,
+      "morph": 1.05,
+      "visual": "两条不同路径继续向前",
+      "action": "两条不同路径继续向前",
+      "meaning": "不必每一步，都走得一样",
+      "kind": "particles"
+    },
+    {
+      "id": "ending",
+      "start": 82,
+      "end": 86,
+      "morph": 1.05,
+      "visual": "锚词温和回归，两光点靠近",
+      "action": "锚词温和回归，两光点靠近",
+      "meaning": "合拍，是你愿意听我说完",
+      "kind": "particles"
+    },
+    {
+      "id": "ending",
+      "start": 86,
+      "end": 90,
+      "morph": 1.05,
+      "visual": "光点相互停留，随末乐句收束",
+      "action": "光点相互停留，随末乐句收束",
+      "meaning": "也是我，愿意向你再走一步",
+      "kind": "particles"
+    }
+  ],
+  "diagram_labels": [
+    {
+      "text": "阅读",
+      "start": 38.45,
+      "end": 41.75,
+      "x": 506,
+      "y": 752
+    },
+    {
+      "text": "音乐",
+      "start": 38.45,
+      "end": 41.75,
+      "x": 960,
+      "y": 752
+    },
+    {
+      "text": "远行",
+      "start": 38.45,
+      "end": 41.75,
+      "x": 1413,
+      "y": 752
+    }
+  ]
 }

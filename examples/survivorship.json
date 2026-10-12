@@ -1,0 +1,310 @@
+{
+  "theme": "幸存者偏差：为什么你看到的，从来都不是全部真相。",
+  "anchor": "落下",
+  "cover_lines": [
+    "幸存者偏差：为什么你看到的",
+    "从来都不是全部真相？"
+  ],
+  "cover_en": "Survivorship bias: why what you see is never the whole story",
+  "term_cn": "幸存者偏差",
+  "term_en": "Survivorship bias",
+  "captions": [
+    {
+      "cn": "你越看成功，为什么越怕被落下？",
+      "en": "Why does seeing more success make you fear falling behind?"
+    },
+    {
+      "cn": "聚光灯下的人，像是全部答案",
+      "en": "Those in the spotlight seem to hold every answer."
+    },
+    {
+      "cn": "可镜头之外，还有多少尝试？",
+      "en": "But how many attempts lie outside the frame?"
+    },
+    {
+      "cn": "你看见留下的，却看不见离开的",
+      "en": "You see those who remain, but not those who leave."
+    },
+    {
+      "cn": "同一次出发，未必都能穿过这道门",
+      "en": "Setting out together does not mean everyone gets through."
+    },
+    {
+      "cn": "穿过去的，继续出现在眼前",
+      "en": "Those who get through stay in view."
+    },
+    {
+      "cn": "被挡住的，慢慢退出你的视野",
+      "en": "Those stopped along the way slowly leave your view."
+    },
+    {
+      "cn": "相同的起点，结果也可能分岔",
+      "en": "The same starting point can lead to different outcomes."
+    },
+    {
+      "cn": "当故事里，只剩下赢家",
+      "en": "When only winners remain in the story..."
+    },
+    {
+      "cn": "谁被你看到的故事，落下了？",
+      "en": "Who has been left out of the story you see?"
+    },
+    {
+      "cn": "只看留下的，会把判断带偏",
+      "en": "Looking only at survivors can skew your judgment."
+    },
+    {
+      "cn": "漏掉失败，可能误读成功",
+      "en": "Missing failures can distort how we explain success."
+    },
+    {
+      "cn": "可见的，只是筛选后的一部分",
+      "en": "What is visible is only the part that passed the filter."
+    },
+    {
+      "cn": "把离场者放回画面，会怎样？",
+      "en": "What happens when those who left return to the picture?"
+    },
+    {
+      "cn": "原本清楚的规律，开始变得复杂",
+      "en": "The once-clear pattern begins to look more complicated."
+    },
+    {
+      "cn": "成功故事，不等于成功保证",
+      "en": "A success story is not a guarantee of success."
+    },
+    {
+      "cn": "沿着结果回头看，起点在哪里？",
+      "en": "Trace the outcome back. Where did the path begin?"
+    },
+    {
+      "cn": "采用同样方法，也可能走向失败",
+      "en": "The same method can also lead to failure."
+    },
+    {
+      "cn": "比较做法，也比较起点与条件",
+      "en": "Compare methods, starting points, and conditions."
+    },
+    {
+      "cn": "再问一句：没留下的人去了哪里？",
+      "en": "Ask again: where did those who did not remain go?"
+    },
+    {
+      "cn": "去找那些，没有进入镜头的记录",
+      "en": "Look for the records that never entered the frame."
+    },
+    {
+      "cn": "把失败和退出，也放到一起看",
+      "en": "Look at failures and departures alongside successes."
+    },
+    {
+      "cn": "补回缺席，仍不代表已知全部",
+      "en": "Restoring missing cases does not mean knowing everything."
+    },
+    {
+      "cn": "怕被落下时，别把缺席的人落下",
+      "en": "When you fear falling behind, do not leave others out."
+    },
+    {
+      "cn": "把目光放宽，再作下一次判断",
+      "en": "Widen your view before your next judgment."
+    }
+  ],
+  "fact": {
+    "number": "2003",
+    "heading": "漏掉失败，会误读成功",
+    "authors": "Jerker Denrell",
+    "source": "Organization Science",
+    "doi": "10.1287/orsc.14.2.227.15164"
+  },
+  "sources": [
+    {
+      "title": "Vicarious Learning, Undersampling of Failure, and the Myths of Management",
+      "year": 2003,
+      "authors": [
+        "Jerker Denrell"
+      ],
+      "url": "https://pubsonline.informs.org/doi/10.1287/orsc.14.2.227.15164",
+      "supports": "组织研究：只观察存续组织、少看失败样本，可能误判某些管理做法与绩效的关系。相同做法未必只存在于成功者。",
+      "boundary": "依据出版方摘要与元数据核实；不是对所有个人处境的实证结论，不声称补齐样本即可证明因果，不虚构成功率或实验。",
+      "checked_on": "2026-10-12"
+    }
+  ],
+  "quotes": [],
+  "metaphor_notes": "整片使用筛选门、观察窗口、轨迹与记录场作示意。粒子数、颜色比例与位置不代表真实样本或统计关系；散点图变化是样本缺失的视觉解释。铜橙表示可见者，冰蓝表示被遗漏或重新纳入的记录，不区分人的价值。",
+  "scene_module": "survivorship-scenes.js",
+  "scenes": [
+    {
+      "id": "spotlight",
+      "start": 0,
+      "end": 6,
+      "morph": 1.05,
+      "visual": "聚光灯与三束上升的粒子",
+      "action": "亮处向上生长，暗处留有未被聚焦的尝试",
+      "meaning": "视线容易只跟随被展示的成功"
+    },
+    {
+      "id": "window",
+      "start": 6,
+      "end": 12,
+      "morph": 1.05,
+      "visual": "狭窄观察窗口与横向记录流",
+      "action": "少数轨迹进入亮框，其余经过窗口外侧并变暗",
+      "meaning": "可见范围不是总体"
+    },
+    {
+      "id": "gate",
+      "start": 12,
+      "end": 18,
+      "morph": 1.05,
+      "visual": "有厚度的筛选门",
+      "action": "粒子从同一侧出发，一部分穿过，一部分向下折返",
+      "meaning": "筛选过程造成样本缺失"
+    },
+    {
+      "id": "forks",
+      "start": 18,
+      "end": 24,
+      "morph": 1.05,
+      "visual": "同源的分岔轨迹",
+      "action": "共享起点的路径展开，未留下的末端逐渐隐去",
+      "meaning": "相近起点可能有不同结局"
+    },
+    {
+      "id": "crop",
+      "start": 24,
+      "end": 30.5,
+      "morph": 1.05,
+      "visual": "逐渐收窄的观察边框",
+      "action": "画框收缩，仅留下少量铜橙路径，随后蓄力收暗",
+      "meaning": "观察窗口把局部误呈为全部"
+    },
+    {
+      "id": "reveal",
+      "start": 30.5,
+      "end": 34,
+      "morph": 0.7,
+      "visual": "扩大边框与重新显现的冰蓝轨迹",
+      "action": "重拍时边框向外打开，缺席轨迹从上下两侧显现",
+      "meaning": "锚词揭示谁被故事落下"
+    },
+    {
+      "id": "evidence",
+      "start": 34,
+      "end": 38,
+      "morph": 1.05,
+      "visual": "右侧经过筛选的记录场",
+      "action": "被遗漏的轨迹在已有记录后逐渐出现，左侧展示研究来源",
+      "meaning": "失败样本遗漏可能误导学习"
+    },
+    {
+      "id": "compare",
+      "start": 38,
+      "end": 46,
+      "morph": 1.05,
+      "visual": "同一总体的两种观察视图",
+      "action": "左侧保留可见者，右侧逐步纳入离场者",
+      "meaning": "比较可见样本与补回样本后的图景"
+    },
+    {
+      "id": "rebuild",
+      "start": 46,
+      "end": 54,
+      "morph": 1.05,
+      "visual": "看似整齐的趋势与遗漏的散点",
+      "action": "扫描线补回冰蓝粒子，原本单一的趋势变得复杂",
+      "meaning": "只看成功者可能误读规律"
+    },
+    {
+      "id": "traceback",
+      "start": 54,
+      "end": 62,
+      "morph": 1.05,
+      "visual": "从结果通向起点的记录路径",
+      "action": "光点沿路径反向追溯，显露不同出发位置",
+      "meaning": "核对结果背后的起点与条件"
+    },
+    {
+      "id": "paired",
+      "start": 62,
+      "end": 70,
+      "morph": 1.05,
+      "visual": "共享一段路径的三组分流",
+      "action": "采用相近做法的路径在后段分向不同结果",
+      "meaning": "相同方法不保证相同结果"
+    },
+    {
+      "id": "recover",
+      "start": 70,
+      "end": 78,
+      "morph": 1.05,
+      "visual": "暗处的记录与横向检索光束",
+      "action": "光束逐段扫过，缺失的记录被重新照亮",
+      "meaning": "主动寻找失败与退出的记录"
+    },
+    {
+      "id": "context",
+      "start": 78,
+      "end": 82,
+      "morph": 1.05,
+      "visual": "补回记录后的完整一些的场景",
+      "action": "原来狭窄的边框留在更大的记录场中",
+      "meaning": "意识到自己的观察边界"
+    },
+    {
+      "id": "whole",
+      "start": 82,
+      "end": 90,
+      "morph": 1.05,
+      "visual": "扩大的视野与仍然模糊的边缘",
+      "action": "镜头后退，观察框打开，远端未知区域保留暗部",
+      "meaning": "不遗漏缺席者，也不把更多信息当作全部真相"
+    }
+  ],
+  "diagram_labels": [
+    {
+      "text": "可见样本",
+      "start": 38.5,
+      "end": 45.5,
+      "x": 575,
+      "y": 104
+    },
+    {
+      "text": "补入离场者",
+      "start": 38.5,
+      "end": 45.5,
+      "x": 1325,
+      "y": 104
+    },
+    {
+      "text": "示意，非统计数据",
+      "start": 38.5,
+      "end": 53.5,
+      "x": 1480,
+      "y": 758
+    },
+    {
+      "text": "相似做法",
+      "start": 62.6,
+      "end": 69.5,
+      "x": 510,
+      "y": 105
+    },
+    {
+      "text": "不同结果",
+      "start": 62.6,
+      "end": 69.5,
+      "x": 1330,
+      "y": 105
+    },
+    {
+      "text": "仍有未知",
+      "start": 83,
+      "end": 89.3,
+      "x": 1600,
+      "y": 758
+    }
+  ],
+  "visual_difference": "14段主题镜头；无漩涡、双环相遇、潮汐、螺旋、书页或双光点情感回应。核心事件为选择性可见、分流、扩大视野、补回记录与回溯条件。",
+  "cover_scene": "window"
+}

@@ -9,7 +9,7 @@
 
 ## 安装
 
-把整个 `resonant-particle-documentary` 文件夹放到支持标准SKILL.md的工具的skills目录。Codex工作区可放 `.agents/skills/`；本次已安装在当前工作区的该目录。其他对话/账号需要按所在工具的技能导入方式安装，本包不会自动改动账号级技能库。
+把整个 `resonant-particle-documentary` 文件夹放到支持标准SKILL.md的工具的skills目录。Codex工作区可放 `.agents/skills/`。本仓库更新后，已安装副本需另行同步。其他对话/账号需要按所在工具的技能导入方式安装，本包不会自动改动账号级技能库。
 
 ## 环境
 
@@ -23,13 +23,17 @@ npm install
 
 npm依赖锁定HyperFrames 0.8.147；也可用环境变量`HYPERFRAMES_CLI`指向已有同版本CLI。`CHROMIUM_PATH`可指向系统Chromium；不设置时优先查找系统浏览器，再使用Playwright安装的浏览器。工具需要本地回环连接。
 
+## 主题动画
+
+画风固定，镜头随主题创作。先读 `references/theme-scenes.md`。配置必须指定独立主题模块和完整分镜，缺失时不套用《合拍》。`examples/hepai.json` 和 `examples/survivorship.json` 分别展示不同主题的动作设计；复制示例时应连同其相邻的 `*-scenes.js` 一起复制。
+
 ## 包内容
 
 - `SKILL.md`：触发、固定规则、操作与验收。
 - `references/`：画风与时间契约、来源与事实规则。
 - `scripts/`：构建、混音、预览、渲染、成片验收。
-- `templates/`：连续粒子渲染器和固定版式。
-- `examples/hepai.json`：已核查的《合拍》完整内容。
+- `templates/`：公共粒子绘制与连续形变机制。
+- `examples/`：两套显式主题配置、各自的镜头模块，以及《合拍》画风参考。
 - `assets/we-never.m4a`：本任务用户指定音乐的固定素材。
 - `assets/fonts/`：固定字体与开放字体许可；无需另装系统字体。
 

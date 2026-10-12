@@ -1,10 +1,10 @@
 """Generate aligned particle glyphs, cover and pre-render checks."""
-import argparse,asyncio,functools,hashlib,http.server,io,itertools,json,os,shutil,threading
+import argparse,asyncio,functools,hashlib,http.server,io,itertools,json,os,shutil,threading,subprocess
 from pathlib import Path
 import numpy as np
 from PIL import Image,ImageDraw
 from playwright.async_api import async_playwright
-p=argparse.ArgumentParser();p.add_argument('--project',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args();a.project=a.project.resolve();a.out.mkdir(parents=True,exist_ok=True)
+p=argparse.ArgumentParser();p.add_argument('--project',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--motion',action='store_true');a=p.parse_args();a.project=a.project.resolve();a.out.mkdir(parents=True,exist_ok=True)
 class Quiet(http.server.SimpleHTTPRequestHandler):
  def log_message(self,*args):pass
  def end_headers(self):
@@ -19,16 +19,16 @@ async def main():
   if os.environ.get('CHROMIUM_PATH') or shutil.which('chromium'):opts['executable_path']=os.environ.get('CHROMIUM_PATH')or shutil.which('chromium')
   browser=await pw.chromium.launch(**opts);page=await browser.new_page(viewport={'width':1920,'height':1080});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
   url=f'http://127.0.0.1:{server.server_port}';await page.goto(url);await page.evaluate('document.fonts.ready');await page.evaluate('seek(34.5)')
-  await page.add_style_tag(content='html,body,#film{background:transparent!important}canvas,.caption,#cover,#fact,#labels,#end-anchor,#hero .term,#veil,#out{display:none!important}#hero .word{color:white!important;text-shadow:none!important}')
+  await page.add_style_tag(content='html,body,#film{background:transparent!important}canvas,.caption,.diagram-label,#cover,#fact,#labels,#end-anchor,#hero .term,#veil,#out{display:none!important}#hero .word{color:white!important;text-shadow:none!important}')
   pix=np.array(Image.open(io.BytesIO(await page.screenshot(omit_background=True))));points=[[x,y]for y in range(150,800,3)for x in range(200,1720,3)if pix[y,x,3]>240]
   assert len(points)>1000,'Title mask missing: install Noto Serif CJK SC.'
   (a.project/'glyph.js').write_text('window.GLYPH='+json.dumps(points,separators=(',',':'))+';')
   await page.reload();await page.evaluate('document.fonts.ready');await page.evaluate('seek(1.5)');await page.screenshot(path=str(a.out/'cover.png'))
-  times=[1.5,4.5,7.5,10.5,13.5,16.5,19.5,22.5,25.5,28.5,31.5,33.4,33.4333333333,33.4666666667,33.5,34,34.5,34.9,35.4,39,43,47,51,55,59,63,67,71,75,79,83,87,90,92.5]
+  times=[1.5,4.5,7.5,10.5,13.5,16.5,19.5,22.5,25.5,28.5,31.5,33.4,33.4333333333,33.4666666667,33.5,33.5666666667,33.6,34,34.5,34.9,35.4,39,43,47,51,55,59,63,67,71,75,79,83,87,90,92.5]
   layouts=[];hashes={}
   for t in times:
    await page.evaluate('(t)=>seek(t)',t);data=await page.screenshot(path=str(a.out/f'{t:07.3f}.png'));hashes[t]=hashlib.sha256(data).hexdigest()
-   boxes=await page.evaluate('''()=>[...document.querySelectorAll('.cn,.en,#cover>div,#hero>div,#fact>div,#labels>span,#end-anchor')].flatMap(e=>{let op=1;for(let p=e;p;p=p.parentElement)op*=+getComputedStyle(p).opacity;if(op<.1)return[];let r=document.createRange();r.selectNodeContents(e);let b=r.getBoundingClientRect();return[{text:e.textContent,x:b.x,y:b.y,w:b.width,h:b.height,lines:r.getClientRects().length,cls:e.className}]})''')
+   boxes=await page.evaluate('''()=>[...document.querySelectorAll('.cn,.en,#cover>div,#hero>div,#fact>div,.diagram-label,#end-anchor')].flatMap(e=>{let op=1;for(let p=e;p;p=p.parentElement)op*=+getComputedStyle(p).opacity;if(op<.1)return[];let r=document.createRange();r.selectNodeContents(e);let b=r.getBoundingClientRect();return[{text:e.textContent,x:b.x,y:b.y,w:b.width,h:b.height,lines:r.getClientRects().length,cls:e.className}]})''')
    for b in boxes:
     assert b['x']>=40 and b['y']>=40 and b['x']+b['w']<=1880 and b['y']+b['h']<=1040,(t,b)
     if b['cls'] in ['cn','en']:assert b['lines']==1,(t,'wrapped caption',b)
@@ -39,7 +39,24 @@ async def main():
   await page.evaluate('seek(9)');h1=hashlib.sha256(await page.screenshot()).hexdigest();await page.evaluate('seek(45)');await page.evaluate('seek(9)');h2=hashlib.sha256(await page.screenshot()).hexdigest();assert h1==h2,'Non-deterministic seek'
   assert hashes[33.4]==hashes[33.4333333333]==hashes[33.4666666667],'Freeze is not static'
   assert not errors,errors
-  q={'glyph_points':len(points),'browser_errors':errors,'deterministic_seek':h1==h2,'freeze_exact':True,'layouts':layouts};(a.out/'preview-check.json').write_text(json.dumps(q,ensure_ascii=False,indent=2));await browser.close()
+  await page.evaluate('seek(1007/30)');assert await page.locator('#hero .term').evaluate('(e)=>+getComputedStyle(e).opacity')==0
+  await page.evaluate('seek(1008/30)');assert await page.locator('#hero .term').evaluate('(e)=>+getComputedStyle(e).opacity')==1
+  motion=[]
+  for t in [4.5,16.5,25.5,43,51,59,67,75,87]:
+   await page.evaluate('(t)=>seek(t)',t);x=np.asarray(Image.open(io.BytesIO(await page.screenshot())).convert('RGB')).astype(float)[110:780,220:1700]
+   await page.evaluate('(t)=>seek(t+.5)',t);y=np.asarray(Image.open(io.BytesIO(await page.screenshot())).convert('RGB')).astype(float)[110:780,220:1700]
+   delta=float(np.abs(x-y).mean());assert delta>.15,('No visible subject motion',t,delta);motion.append({'time':t,'mean_channel_delta':delta})
+  if a.motion:
+   segments=[('opening',3,8),('impact',32.8,37),('explanation',49,54),('ending',85,90)]
+   for name,start,end in segments:
+    output=a.out/(name+'.mp4')
+    cmd=['ffmpeg','-v','error','-n','-f','image2pipe','-vcodec','mjpeg','-r','30','-i','pipe:0','-ss',str(start-3),'-i',str(a.project/'assets/mix.wav'),'-map','0:v','-map','1:a','-t',str(end-start),'-vf','scale=960:540','-c:v','libx264','-preset','fast','-crf','20','-pix_fmt','yuv420p','-c:a','aac','-movflags','+faststart',str(output)]
+    proc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=subprocess.PIPE)
+    for frame in range(round((end-start)*30)):
+     await page.evaluate('(t)=>seek(t)',start+frame/30);proc.stdin.write(await page.screenshot(type='jpeg',quality=88))
+    proc.stdin.close();err=proc.stderr.read().decode();assert proc.wait()==0,err
+   (a.out/'motion-previews.json').write_text(json.dumps(segments))
+  q={'glyph_points':len(points),'browser_errors':errors,'deterministic_seek':h1==h2,'freeze_exact':True,'term_exact_frame':1008,'subject_motion':motion,'layouts':layouts};(a.out/'preview-check.json').write_text(json.dumps(q,ensure_ascii=False,indent=2));await browser.close()
 try:asyncio.run(main())
 finally:server.shutdown()
 files=sorted(a.out.glob('[0-9]*.png'));contact=Image.new('RGB',(1920,((len(files)+3)//4)*298),'#101923');d=ImageDraw.Draw(contact)
